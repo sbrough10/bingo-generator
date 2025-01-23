@@ -64,7 +64,7 @@ function App() {
     }
     const unpickedOptions = Array.from(
       { length: tileOptions.length },
-      (value, index) => {
+      (_, index) => {
         return index;
       }
     );
