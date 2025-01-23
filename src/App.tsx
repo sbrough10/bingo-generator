@@ -163,9 +163,11 @@ function App() {
           </tr>
         </table>
         <div className="input-wrapper">
-          <textarea className="options-input" onChange={onUpdateOptions}>
-            {tileOptions.join("\n")}
-          </textarea>
+          <textarea
+            className="options-input"
+            onChange={onUpdateOptions}
+            value={tileOptions.join("\n")}
+          />
           <button onClick={resetSelectedTiles}>Reset</button>
         </div>
       </div>
