@@ -107,68 +107,76 @@ function App() {
     setTileOptions(text.split("\n"));
   };
 
-  const resetSelectedTiles = () => {
+  const reshuffleSelectedTiles = () => {
     setTileSelections([]);
+  };
+
+  const clearTileOptions = () => {
+    setTileSelections([]);
+    setTileOptions([]);
   };
 
   return (
     <>
-      <div className="board-wrapper">
-        <table className="bingo-board">
-          <tr className="row">
-            <td className="tile">B</td>
-            <td className="tile">I</td>
-            <td className="tile">N</td>
-            <td className="tile">G</td>
-            <td className="tile">O</td>
-          </tr>
-          <tr className="row">
-            {getTile(0)}
-            {getTile(1)}
-            {getTile(2)}
-            {getTile(3)}
-            {getTile(4)}
-          </tr>
-          <tr className="row">
-            {getTile(5)}
-            {getTile(6)}
-            {getTile(7)}
-            {getTile(8)}
-            {getTile(9)}
-          </tr>
-          <tr className="row">
-            {getTile(10)}
-            {getTile(11)}
-            <Tile
-              text="Makes it to inauguration"
-              isChecked={true}
-              onClick={() => {}}
-            />
-            {getTile(12)}
-            {getTile(13)}
-          </tr>
-          <tr className="row">
-            {getTile(14)}
-            {getTile(15)}
-            {getTile(16)}
-            {getTile(17)}
-            {getTile(18)}
-          </tr>
-          <tr className="row">
-            {getTile(19)}
-            {getTile(20)}
-            {getTile(21)}
-            {getTile(22)}
-            {getTile(23)}
-          </tr>
-        </table>
+      <div className="content-wrapper">
+        <div className="board-wrapper">
+          <table className="bingo-board">
+            <tr className="row">
+              <th className="tile">B</th>
+              <th className="tile">I</th>
+              <th className="tile">N</th>
+              <th className="tile">G</th>
+              <th className="tile">O</th>
+            </tr>
+            <tr className="row">
+              {getTile(0)}
+              {getTile(1)}
+              {getTile(2)}
+              {getTile(3)}
+              {getTile(4)}
+            </tr>
+            <tr className="row">
+              {getTile(5)}
+              {getTile(6)}
+              {getTile(7)}
+              {getTile(8)}
+              {getTile(9)}
+            </tr>
+            <tr className="row">
+              {getTile(10)}
+              {getTile(11)}
+              <Tile
+                text="Makes it to inauguration"
+                isChecked={true}
+                onClick={() => {}}
+              />
+              {getTile(12)}
+              {getTile(13)}
+            </tr>
+            <tr className="row">
+              {getTile(14)}
+              {getTile(15)}
+              {getTile(16)}
+              {getTile(17)}
+              {getTile(18)}
+            </tr>
+            <tr className="row">
+              {getTile(19)}
+              {getTile(20)}
+              {getTile(21)}
+              {getTile(22)}
+              {getTile(23)}
+            </tr>
+          </table>
+        </div>
         <div className="input-wrapper">
           <textarea
             className="options-input"
             onChange={onUpdateOptions}
             value={tileOptions.join("\n")}
           />
-          <button onClick={resetSelectedTiles}>Reset</button>
+          <button onClick={reshuffleSelectedTiles}>Reshuffle</button>
+          <button onClick={clearTileOptions}>Clear</button>
         </div>
       </div>
     </>

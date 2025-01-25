@@ -40,53 +40,51 @@
   color: #888;
 }
 
-.board-wrapper {
+.content-wrapper {
   display: flex;
   flex-direction: row;
 }
-
-.bingo-board {
-  display: table;
+@media (max-width: 640px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
 }
 
-.bingo-board .row {
-  display: table-row;
+.board-wrapper {
+  flex: 1;
+}
+
+.bingo-board {
+  width: 100%;
 }
 
 .bingo-board th {
-  font-size: 24px;
+  font-size: 96px;
 }
 
 .bingo-board th,
 .bingo-board .tile {
-  width: 200px;
-  height: 200px;
   background: white;
   color: black;
+  width: 150px;
+  height: 150px;
 }
 
-.bingo-board .tile {
-  display: table-cell;
+.bingo-board .tile button {
+  height: 100%;
+  width: 100%;
+  color: black;
+  background: white;
+  border-radius: 50%;
+  font-size: 14px;
 }
-.bingo-board .tile.checked {
+.bingo-board .tile.checked button {
   background: lightblue;
 }
 
-/* .bingo-board td.checked::before {
-  content: "";
-  position: absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  width: 100px; 
-  height: 100px;
-  background-color: blue;
-  border-radius: 50%; 
-  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.5); 
-} */
-
 .input-wrapper {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .options-input {
